@@ -1,1 +1,47 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+body{
+  margin: 0 auto;
+}
+
+
+h1,
+h2,
+p{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+h1 {
+  color: #3399cc;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;   
+@media screen and (max-width: 768px){
+     text-align: center;
+     
+  }
+
+    @include desktop {
+        max-width: 1770px;
+    }
+}

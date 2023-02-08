@@ -1,0 +1,54 @@
+// input:focus-visible{
+//     outline: #0e87e3;
+// }
+.search-form {
+  width: fit-content;
+  display: flex;
+  border: 1px solid #84b4d8;
+  margin-bottom: 20px;
+  @media screen and (max-width: 400px){
+     flex-direction: column;
+     
+  }
+}
+
+.search-form-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    min-height: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-image: url('../images/search-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+  }
+}
+
+input {
+  padding: 12px 15px;
+  color: #84b4d8;
+  border: none;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+input::placeholder {
+    color: #84b4d8;
+}
+
+button {
+  color: white;
+  background-color: #84b4d8;
+  border: none;
+  padding: 14px;
+  font-size: 21px;
+}
+input:focus-visible {
+      outline: auto;
+      border-color: #2d8cf0;
+    }

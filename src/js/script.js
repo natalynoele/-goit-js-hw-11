@@ -1,9 +1,10 @@
 import { Notify } from 'notiflix';
+import ImagesApiService from './images-api-service';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import ImagesApiService from './js/images-api-service';
-import Markup from './js/markup';
-import { smoothScroll, scrollToTop } from './js/scroll';
+import InfiniteScroll from 'infinite-scroll';
+import Markup from './markup';
+import { smoothScroll, scrollToTop } from './scroll'
 
 let isImages = true;
 const galleryWrap = document.querySelector('.gallery');
@@ -46,7 +47,7 @@ async function onSearch(e) {
     showPageLoader(true);
     const images = await imagesApiService.getImages();
     showPageLoader(false);
-    if (images.hits.length === 0) {
+     if (images.hits.length === 0) {
       return Notify.info(
         'Sorry, there are no images matching your search query. Please try again.'
       );
