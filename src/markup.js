@@ -1,5 +1,5 @@
 function renderImages(container, images) {
-  markup = images.reduce(
+  const markup = images.reduce(
     (listMarkup, image) => listMarkup + createImageCardMarkup(image),
     ''
   );
