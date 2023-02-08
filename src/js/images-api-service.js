@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Notify } from 'notiflix';
-import * as dotenv from 'dotenv';
+
 
 export default class ImagesApiService {
   constructor() {
@@ -14,7 +14,7 @@ export default class ImagesApiService {
   async getImages() {
     const options = `image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=${this.perPage}`;
     const ENDPOINT = 'https://pixabay.com/api/';
-    const API_KEY = process.env.KEY;
+    const API_KEY = '33300919-40929e674b87413f155229e92';
     const response = await axios.get(
       `${ENDPOINT}?key=${API_KEY}&q=${this.searchQuery}&${options}`
     );
