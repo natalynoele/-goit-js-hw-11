@@ -43,9 +43,9 @@ function changeTitleAccordingQuery(query, totalHits, tag) {
   tag.textContent = `Hooray! We found ${totalHits} images at your query: "${query}".`;
 }
 
-function renderInfoEndOfContent() {
+function renderInfoEndOfContent(container) {
   const markup = '<p class="infinite-scroll-last">End of content</p>';
-  galleryWrap.insertAdjacentHTML('beforeend', markup);
+  container.insertAdjacentHTML('beforeend', markup);
 }
 
 export default {

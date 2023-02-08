@@ -69,7 +69,7 @@ async function onSearch(e) {
 async function loadMore() {
   if (!imagesApiService.isLastPage()) {
     isImages = false;
-    Markup.renderInfoEndOfContent();
+    Markup.renderInfoEndOfContent(galleryWrap);
     return;
   }
   showPageLoader(true);
