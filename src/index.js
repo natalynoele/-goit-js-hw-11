@@ -1,9 +1,9 @@
 import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import ImagesApiService from './js/images-api-service';
-import Markup from './js/markup';
-import { smoothScroll, scrollToTop } from './js/scroll';
+import ImagesApiService from './images-api-service';
+import Markup from './markup';
+import { smoothScroll, scrollToTop } from './scroll';
 
 let isImages = true;
 const galleryWrap = document.querySelector('.gallery');

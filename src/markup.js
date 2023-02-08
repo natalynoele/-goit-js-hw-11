@@ -39,10 +39,6 @@ function createImageCardMarkup({
 `;
 }
 
-function updateMarkup(element, markup = '') {
-  element.insertAdjacentHTML('beforeend', markup);
-}
-
 function changeTitleAccordingQuery(query, totalHits, tag) {
   tag.textContent = `Hooray! We found ${totalHits} images at your query: "${query}".`;
 }
@@ -55,7 +51,6 @@ function renderInfoEndOfContent() {
 export default {
   createImageCardMarkup,
   renderImages,
-  updateMarkup,
   changeTitleAccordingQuery,
   renderInfoEndOfContent,
 };
