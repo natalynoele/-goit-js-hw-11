@@ -4,24 +4,25 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import ImagesApiService from './images-api-service';
 import Markup from './markup';
 import { smoothScroll, scrollToTop } from './scroll';
-
-let isImages = true;
 const galleryWrap = document.querySelector('.gallery');
 const form = document.querySelector('.search-form');
 const galleryTitle = document.querySelector('.gallery-title');
-const body = document.querySelector('body');
 const imagesApiService = new ImagesApiService();
 const up = document.querySelector('.up');
 const preloader = document.querySelector('.lds-ellipsis');
+const calibration = 1;
+let isImages = true;
+
 
 window.onscroll = function (ev) {
+ 
   if (window.scrollY < 1000) {
     up.style.display = 'none';
   } else {
     up.style.display = 'block';
   }
   if (
-    window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+    window.innerHeight + window.scrollY + calibration>= document.body.offsetHeight &&
     isImages
   ) {
     loadMore();
@@ -47,6 +48,7 @@ async function onSearch(e) {
     const images = await imagesApiService.getImages();
     showPageLoader(false);
     if (images.hits.length === 0) {
+      galleryTitle.textContent = '';
       return Notify.info(
         'Sorry, there are no images matching your search query. Please try again.'
       );
@@ -67,6 +69,7 @@ async function onSearch(e) {
 }
 
 async function loadMore() {
+  
   if (!imagesApiService.isLastPage()) {
     isImages = false;
     Markup.renderInfoEndOfContent(galleryWrap);
